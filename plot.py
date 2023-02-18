@@ -7,7 +7,7 @@ Created on Sat Feb 18 10:43:27 2023
 """
 
 import matplotlib.pyplot as plt
-import numpy as np
+import pandas as pd
 
 data = pd.read_csv("leb_oro.csv").sort_values(by='PT',ascending= False)
 
