@@ -6,13 +6,19 @@ Created on Sat Feb 18 10:43:27 2023
 @author: pablo
 """
 
-import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 
-data = pd.read_csv("leb_oro.csv").sort_values(by='PT',ascending= False)"
+data = pd.read_csv("leb_oro.csv").sort_values(by='PT',ascending= False)
 
-plt.ylim([65, 85])
-plt.bar(data['Equipo'], data['PT'])
+datos = data['PT']
+etiquetas = data['Equipo']
 
-plt.xticks(data['Equipo'], rotation=90)
+fig, ax = plt.subplots()
+ax.bar(etiquetas, datos)
+ax.set_xticklabels(etiquetas, rotation=90)
+ax.set_ylim([60, 85])
+
+plt.show()
+
 
